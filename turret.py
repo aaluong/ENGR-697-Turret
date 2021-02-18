@@ -139,6 +139,7 @@ class VideoUtils(object):
                 (x, y, w, h) = cv2.boundingRect(c)
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 callback(c, frame)
+		        Repeat.motion_detection(show_video=true)
 
             # show the frame and record if the user presses a key
             if show_video:
