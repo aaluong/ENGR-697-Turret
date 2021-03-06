@@ -87,6 +87,7 @@ class VideoUtils(object):
 
         # loop over the frames of the video
         while True:
+	    time.sleep(1)
             # grab the current frame and initialize the occupied/unoccupied
             # text
 
@@ -145,7 +146,6 @@ class VideoUtils(object):
             if show_video:
                 cv2.imshow("Security Feed", frame)
                 key = cv2.waitKey(1) & 0xFF
-		time.sleep(.5)
 
                 # if the `q` key is pressed, break from the lop
                 if key == ord("q"):
