@@ -78,7 +78,7 @@ class VideoUtils(object):
     def find_motion(callback, camera_port=0, show_video=False):
 
         camera = cv2.VideoCapture(camera_port)
-        time.sleep(0.25)
+        time.sleep(0.5)
 
         # initialize the first frame in the video stream
         firstFrame = None
