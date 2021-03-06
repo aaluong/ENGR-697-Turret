@@ -87,7 +87,7 @@ class VideoUtils(object):
 
         # loop over the frames of the video
         while True:
-	    time.sleep(1)
+	    time.sleep(.5)
             # grab the current frame and initialize the occupied/unoccupied
             # text
 
