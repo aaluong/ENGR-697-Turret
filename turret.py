@@ -78,7 +78,7 @@ class VideoUtils(object):
     def find_motion(callback, camera_port=0, show_video=False):
 
         camera = cv2.VideoCapture(camera_port)
-        time.sleep(0.5)
+        time.sleep(0.25)
 
         # initialize the first frame in the video stream
         firstFrame = None
@@ -145,6 +145,7 @@ class VideoUtils(object):
             if show_video:
                 cv2.imshow("Security Feed", frame)
                 key = cv2.waitKey(1) & 0xFF
+		time.sleep(.5)
 
                 # if the `q` key is pressed, break from the lop
                 if key == ord("q"):
