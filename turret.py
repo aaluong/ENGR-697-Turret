@@ -87,7 +87,6 @@ class VideoUtils(object):
 
         # loop over the frames of the video
         while True:
-	    time.sleep(.5)
             # grab the current frame and initialize the occupied/unoccupied
             # text
 
@@ -138,7 +137,7 @@ class VideoUtils(object):
                 # compute the bounding box for the contour, draw it on the frame,
                 # and update the text
                 (x, y, w, h) = cv2.boundingRect(c)
-		if cv2.contourArea(c) > 30:
+		if cv2.contourArea(c) > 50:
 	                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 callback(c, frame)
 
