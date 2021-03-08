@@ -127,8 +127,8 @@ class VideoUtils(object):
 
             # compute the absolute difference between the current frame and
             # first frame
-	    cv2.accumulateWeighted(gray, firstFrame, 0.05)
-            frameDelta = cv2.absdiff(cv2.convertScaleAbs(firstFrame), gray)
+	    cv2.accumulateWeighted(gray, tempFrame, 0.05)
+            frameDelta = cv2.absdiff(cv2.convertScaleAbs(tempFrame), gray)
             thresh = cv2.threshold(frameDelta, 25, 255, cv2.THRESH_BINARY)[1]
 
             # dilate the thresholded image to fill in holes, then find contours
