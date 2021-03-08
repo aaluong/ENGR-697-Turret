@@ -10,6 +10,7 @@ import atexit
 import sys
 import termios
 import contextlib
+import numpy as np
 
 import imutils
 import RPi.GPIO as GPIO
