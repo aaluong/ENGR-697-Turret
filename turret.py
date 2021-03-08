@@ -21,8 +21,8 @@ from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor, Adafruit_Step
 MOTOR_X_REVERSED = False
 MOTOR_Y_REVERSED = False
 
-MAX_STEPS_X = 15
-MAX_STEPS_Y = 10
+MAX_STEPS_X = 5
+MAX_STEPS_Y = 5
 
 RELAY_PIN = 22
 
