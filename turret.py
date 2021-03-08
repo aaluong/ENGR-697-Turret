@@ -110,7 +110,7 @@ class VideoUtils(object):
                     tempFrame = gray.copy().astype("float")
                     continue
                 else:
-                    delta = cv2.absdiff(tempFrame, gray)
+                    """delta = cv2.absdiff(tempFrame, gray)
                     tempFrame = gray
                     tst = cv2.threshold(delta, 5, 255, cv2.THRESH_BINARY)[1]
                     tst = cv2.dilate(tst, None, iterations=2)
@@ -123,6 +123,7 @@ class VideoUtils(object):
                     else:
                         count += 1
                         continue
+		    """
 
             # compute the absolute difference between the current frame and
             # first frame
