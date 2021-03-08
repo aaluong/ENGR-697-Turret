@@ -106,7 +106,7 @@ class VideoUtils(object):
             if firstFrame is None:
                 print "Waiting for video to adjust..."
                 if tempFrame is None:
-                    tempFrame = gray
+                    tempFrame = gray.copy().astype("float")
                     continue
                 else:
                     delta = cv2.absdiff(tempFrame, gray)
@@ -125,7 +125,8 @@ class VideoUtils(object):
 
             # compute the absolute difference between the current frame and
             # first frame
-            frameDelta = cv2.absdiff(firstFrame, gray)
+	    cv2.accumulateWeighted(gray, firstFrame, 0.05)
+            frameDelta = cv2.absdiff(cv2.convertScaleAbs(firstFrame), gray)
             thresh = cv2.threshold(frameDelta, 25, 255, cv2.THRESH_BINARY)[1]
 
             # dilate the thresholded image to fill in holes, then find contours
@@ -137,8 +138,7 @@ class VideoUtils(object):
                 # compute the bounding box for the contour, draw it on the frame,
                 # and update the text
                 (x, y, w, h) = cv2.boundingRect(c)
-		if cv2.contourArea(c) > 10:
-	                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 callback(c, frame)
 
             # show the frame and record if the user presses a key
