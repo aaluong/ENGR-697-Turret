@@ -108,6 +108,7 @@ class VideoUtils(object):
                 print "Waiting for video to adjust..."
                 if tempFrame is None:
                     tempFrame = gray.copy().astype("float")
+		    time.sleep(30)
                     continue
                 else:
                     """delta = cv2.absdiff(tempFrame, gray)
