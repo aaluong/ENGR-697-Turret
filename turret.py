@@ -76,7 +76,7 @@ class VideoUtils(object):
         cv2.destroyAllWindows()
 
     @staticmethod
-    def find_motion(callback, camera_port=0, show_video=False):
+    def find_motion(callback, camera_port=0, show_video=True):
 
         camera = cv2.VideoCapture(camera_port)
         time.sleep(0.25)
