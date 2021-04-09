@@ -112,7 +112,7 @@ class VideoUtils(object):
 
             # compute the average difference between the current frame and
             # previous frames
-	    cv2.accumulateWeighted(gray, tempFrame, 0.1)
+	    cv2.accumulateWeighted(gray, tempFrame, 0.2)
             frameDelta = cv2.absdiff(cv2.convertScaleAbs(tempFrame), gray)
             thresh = cv2.threshold(frameDelta, 25, 255, cv2.THRESH_BINARY)[1]
 
